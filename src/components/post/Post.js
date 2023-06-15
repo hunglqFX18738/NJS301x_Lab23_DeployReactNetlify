@@ -70,63 +70,64 @@ const Post = () => {
   return (
     <Container className='p-3 d-flex flex-column w-50'>
       {error}
-      <Container className='p-3 d-flex flex-column w-50'>
-        <Form noValidate>
-          {show && (
-            <Alert
-              variant={status === 'success' ? 'success' : 'danger'}
-              onClose={() => setShow(false)}
-              dismissible
-            >
-              {msg}
-            </Alert>
-          )}
-          <Row className='mb-3'>
-            <Col xs={9}>
-              <Form.Group>
-                <Form.Control required type='text' defaultValue='Im a New!' />
-              </Form.Group>
-            </Col>
-            <Col xs={3}>
-              <Button disabled>UPDATE</Button>
-            </Col>
-          </Row>
-          <Row className='justify-content-md-center'>
-            <Col xs={5}>
-              <NewPost alertHandler={alertHandler} />
-            </Col>
-          </Row>
-        </Form>
-      </Container>
-      {postData ? (
-        postData.length === 0 ? (
-          <h1 className='text-center'>No Post Found!</h1>
-        ) : (
-          postData.map(e => (
-            <Card className='mb-3'>
-              {/* <Card.Header>Featured</Card.Header> */}
-              <Card.Body>
-                {/* <Card.Title>Posted by on .........</Card.Title> */}
-                <Card.Text>Posted by on {dateHandler(e.dateCreated)}</Card.Text>
-                <Card.Text className='h4 mb-3'>{e.title}</Card.Text>
-                <div class='d-flex justify-content-end'>
-                  <Button
-                    variant='outline-info'
-                    onClick={() => navigate(`/post/${e._id}`)}
-                    style={{ border: 'none' }}
-                  >
-                    VIEW
-                  </Button>
-                  <EditPost postId={e._id} alertHandler={alertHandler} />
-                  <DeletePost postId={e._id} alertHandler={alertHandler} />
-                </div>
-              </Card.Body>
-            </Card>
-          ))
-        )
-      ) : (
-        <h1>No Backend Data!</h1>
-      )}
+    <h1>Hello</h1>
+      // <Container className='p-3 d-flex flex-column w-50'>
+      //   <Form noValidate>
+      //     {show && (
+      //       <Alert
+      //         variant={status === 'success' ? 'success' : 'danger'}
+      //         onClose={() => setShow(false)}
+      //         dismissible
+      //       >
+      //         {msg}
+      //       </Alert>
+      //     )}
+      //     <Row className='mb-3'>
+      //       <Col xs={9}>
+      //         <Form.Group>
+      //           <Form.Control required type='text' defaultValue='Im a New!' />
+      //         </Form.Group>
+      //       </Col>
+      //       <Col xs={3}>
+      //         <Button disabled>UPDATE</Button>
+      //       </Col>
+      //     </Row>
+      //     <Row className='justify-content-md-center'>
+      //       <Col xs={5}>
+      //         <NewPost alertHandler={alertHandler} />
+      //       </Col>
+      //     </Row>
+      //   </Form>
+      // </Container>
+      // {postData ? (
+      //   postData.length === 0 ? (
+      //     <h1 className='text-center'>No Post Found!</h1>
+      //   ) : (
+      //     postData.map(e => (
+      //       <Card className='mb-3'>
+      //         {/* <Card.Header>Featured</Card.Header> */}
+      //         <Card.Body>
+      //           {/* <Card.Title>Posted by on .........</Card.Title> */}
+      //           <Card.Text>Posted by on {dateHandler(e.dateCreated)}</Card.Text>
+      //           <Card.Text className='h4 mb-3'>{e.title}</Card.Text>
+      //           <div class='d-flex justify-content-end'>
+      //             <Button
+      //               variant='outline-info'
+      //               onClick={() => navigate(`/post/${e._id}`)}
+      //               style={{ border: 'none' }}
+      //             >
+      //               VIEW
+      //             </Button>
+      //             <EditPost postId={e._id} alertHandler={alertHandler} />
+      //             <DeletePost postId={e._id} alertHandler={alertHandler} />
+      //           </div>
+      //         </Card.Body>
+      //       </Card>
+      //     ))
+      //   )
+      // ) : (
+      //   <h1>No Backend Data!</h1>
+      // )}
     </Container>
   );
 };
