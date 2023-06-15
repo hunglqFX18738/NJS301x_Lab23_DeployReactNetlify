@@ -41,22 +41,23 @@ function App() {
   return (
     <BrowserRouter>
       <Layout>
-        {error}
+        // {error}
         <Routes>
-          {loading ? (
-            <Route exact path='/' element={<Loading />} />
-          ) : isAuthenticated ? (
-            <React.Fragment>
-              <Route exact path='/' element={<Post />} />
-              <Route exact path='/post/:postId' element={<PostDetail />} />
-            </React.Fragment>
-          ) : (
-            <React.Fragment>
-              <Route exact path='/' element={<Login />} />
-              <Route path='/login' element={<Login />} />
-              <Route path='/signup' element={<Signup />} />
-            </React.Fragment>
-          )}
+           <Route exact path='/' element={<Post />} />
+          // {loading ? (
+          //   <Route exact path='/' element={<Loading />} />
+          // ) : isAuthenticated ? (
+          //   <React.Fragment>
+          //     <Route exact path='/' element={<Post />} />
+          //     <Route exact path='/post/:postId' element={<PostDetail />} />
+          //   </React.Fragment>
+          // ) : (
+          //   <React.Fragment>
+          //     <Route exact path='/' element={<Login />} />
+          //     <Route path='/login' element={<Login />} />
+          //     <Route path='/signup' element={<Signup />} />
+          //   </React.Fragment>
+          // )}
 
           {/* <Route path='*' element={<PageNotFound />} />
           <Route path='server-error' element={<ServerError />} /> */}
