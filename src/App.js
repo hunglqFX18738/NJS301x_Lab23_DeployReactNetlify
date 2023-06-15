@@ -23,20 +23,20 @@ function App() {
 
   const { error, sendRequest: getAuth, loading } = useHttp();
 
-  useEffect(() => {
-    const isAuthStore = data => {
-      dispatch(authActions.isAuth(data));
-    };
-    getAuth({ url: 'http://localhost:5000/authentication' }, isAuthStore);
-    const socket = openSocket('http://localhost:5000');
-    socket.on('auth', data => {
-      if (data.action === 'login') {
-        getAuth({ url: 'http://localhost:5000/authentication' }, isAuthStore);
-      } else if (data.action === 'logout') {
-        getAuth({ url: 'http://localhost:5000/authentication' }, isAuthStore);
-      }
-    });
-  }, [getAuth, dispatch]);
+  // useEffect(() => {
+  //   const isAuthStore = data => {
+  //     dispatch(authActions.isAuth(data));
+  //   };
+  //   getAuth({ url: 'http://localhost:5000/authentication' }, isAuthStore);
+  //   const socket = openSocket('http://localhost:5000');
+  //   socket.on('auth', data => {
+  //     if (data.action === 'login') {
+  //       getAuth({ url: 'http://localhost:5000/authentication' }, isAuthStore);
+  //     } else if (data.action === 'logout') {
+  //       getAuth({ url: 'http://localhost:5000/authentication' }, isAuthStore);
+  //     }
+  //   });
+  // }, [getAuth, dispatch]);
 
   return (
     <BrowserRouter>
